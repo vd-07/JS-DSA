@@ -1,0 +1,14 @@
+function sumFibs(num) {
+  var first = 1, second = 1;
+  var sum = 2, curr = 1;
+  for(; first + second <= num;) {
+    curr = first + second;
+    if(curr & 1)
+      sum += curr;
+    first = second;
+    second = curr;
+  }
+  return sum;
+}
+
+sumFibs(4);

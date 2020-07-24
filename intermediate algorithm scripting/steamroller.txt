@@ -1,0 +1,14 @@
+function steamrollArray(arr) {
+  let flattened = [];
+  for(let i in arr) {
+    if(Array.isArray(arr[i])) {
+      flattened = flattened.concat(steamrollArray(arr[i]));
+      // console.log(flattened);
+    }
+    else
+      flattened.push(arr[i]);
+  }
+  return flattened;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);

@@ -1,0 +1,17 @@
+function gcd(a, b) {
+  if(b == 0)
+    return a;
+  return gcd(b, a % b);
+}
+
+function smallestCommons(arr) {
+  arr.sort((item1, item2) => item1 - item2);
+  var lcm = arr[0];
+  for(let i = arr[0] + 1; i <= arr[1]; i++) {
+    lcm = (lcm * i) / gcd(i, lcm);
+  }
+  return lcm;
+}
+
+
+smallestCommons([1,5]);

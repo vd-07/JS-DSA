@@ -1,0 +1,9 @@
+function destroyer(arr) {
+  // getting out the constraints
+  let args = [...arguments].slice(1);
+  // removing banned items
+  let result = arr.filter(item => !args.includes(item));
+  return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

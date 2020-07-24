@@ -1,0 +1,20 @@
+function mutation(arr) {
+  let count1 = [], count2 = [];
+  for(let i = 1; i <= 26; i++) {
+    count1.push(0);
+    count2.push(0);
+  }
+  for(let i in arr[0]) {
+    count1[arr[0][i].toLowerCase().charCodeAt(0) - 97] ++;
+  }
+  for(let i in arr[1]) {
+    count2[arr[1][i].toLowerCase().charCodeAt(0) - 97] ++;
+  }
+  for(let i = 0; i < 26; i++) {
+    if(count1[i] == 0 && count2[i]) 
+    return false;
+  }
+  return true;
+}
+
+mutation(["hello", "hey"]);

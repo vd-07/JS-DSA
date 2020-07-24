@@ -1,0 +1,19 @@
+function vowel(c) {
+  return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+}
+function translatePigLatin(str) {
+  if(vowel(str[0])) {
+    str = str + "way";
+  }
+  else {
+    var moveBack = "";
+    while(!vowel(str[0]) && str != "") {
+      moveBack += str[0];
+      str = str.substring(1);
+    }
+    str = str + moveBack + "ay";
+  }
+  return str;
+}
+
+translatePigLatin("consonant");
