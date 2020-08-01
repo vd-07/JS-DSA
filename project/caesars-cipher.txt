@@ -1,0 +1,18 @@
+function rot13(str) {
+  var ans = "";
+  for(let i in str) {
+    var simp = str[i].charCodeAt(0);
+    if(simp < 65 || simp > 90) {
+      ans += str[i];
+    }
+    else if(simp - 13 < 65) {
+      ans += String.fromCharCode(90 + (simp - 12 - 65));
+    }
+    else {
+      ans += String.fromCharCode((simp - 13));
+    }
+  }
+  return ans;
+}
+
+rot13("SERR PBQR PNZC");
